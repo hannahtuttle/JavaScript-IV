@@ -58,6 +58,36 @@ class ProjectManager extends Instructor{
     }
 }
 
+const sarah = new Person({
+    name: 'Sarah',
+    location: 'Seattle',
+    age: 20,
+  });
+
+sarah.speak()
+
+const John = new Instructor({
+    name: 'Fred',
+    location: 'Bedrock',
+    age: 37,
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`
+  });
+
+  John.demo('html')
+
+  const jane = new Student({
+    name: 'Jane',
+    location: 'Portland',
+    age: 37,
+    previousBackground: 'college',
+    className: 'wed21',
+    favSubject: ['Html', 'CSS', 'JavaScript']
+  });
+
+  John.grade(jane,'CSS')
+
 const fred = new Student({
     name: 'Fred',
     location: 'Bedrock',
@@ -68,3 +98,20 @@ const fred = new Student({
   });
 
   fred.listSubjects();
+  fred.PRAssignments('React');
+  fred.sprintChallenge('html');
+
+  const brad = new ProjectManager({
+    name: 'Brad',
+    location: 'Boulder',
+    age: 35,
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`,
+    gradClassName: 'CS1',
+    favInstructor: 'McGonagal'
+  });
+
+brad.standUp('web21');
+brad.debugsCode(jane, 'javascript')
+
