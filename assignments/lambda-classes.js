@@ -23,6 +23,10 @@ class Instructor extends Person {
     grade(student, subject){
         console.log(`${student.name} receives a perfect score on ${subject}`)
     }
+    changeGrade(student){
+        student.grade = Math.random() * 100
+        console.log(`${student.name}'s new grade is ${student.grade}.`)
+    }
 }
 
 class Student extends Person {
@@ -64,10 +68,7 @@ class ProjectManager extends Instructor{
     debugsCode(student, subject){
         console.log(`${this.name} debugs ${student.name}'s code on ${subject}`)
     }
-    changeGrade(student){
-        let newGrade = Math.random() * 100
-        console.log(`${student.name}'s new grade is ${newGrade}.`)
-    }
+
 }
 
 const sarah = new Person({
