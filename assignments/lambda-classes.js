@@ -44,6 +44,20 @@ class Student extends Person {
     }
 }
 
+class ProjectManager extends Instructor{
+    constructor(pmAttr){
+        super(pmAttr);
+        this.gradClassName = pmAttr.gradClassName;
+        this.favInstructor = pmAttr.favInstructor;
+    }
+    standUp(channel){
+        console.log(`${this.name} announces to ${channel}, @channel standy times!​​​​​`)
+    }
+    debugsCode(student, subject){
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`)
+    }
+}
+
 const fred = new Student({
     name: 'Fred',
     location: 'Bedrock',
