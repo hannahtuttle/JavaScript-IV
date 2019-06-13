@@ -31,6 +31,7 @@ class Student extends Person {
         this.previousBackground = studentAttr.previousBackground;
         this.className = studentAttr.className;
         this.favSubject = studentAttr.favSubject;
+        this.grade = studentAttr.grade;
     }
     listSubjects(){
         this.favSubject.forEach((item) => { console.log(item);})
@@ -41,6 +42,13 @@ class Student extends Person {
     }
     sprintChallenge(subject){
         console.log(`${this.name} had begun sprint challenge on ${subject}`)
+    }
+    canGraduate(){
+        if(this.grade >= 70){
+            console.log(`${this.name} is ready to graduate!`)
+        } else{
+            console.log(`${this.name} needs to go back and do more assignments!`)
+        }
     }
 }
 
@@ -55,6 +63,10 @@ class ProjectManager extends Instructor{
     }
     debugsCode(student, subject){
         console.log(`${this.name} debugs ${student.name}'s code on ${subject}`)
+    }
+    changeGrade(student){
+        let newGrade = Math.random() * 100
+        console.log(`${student.name}'s new grade is ${newGrade}.`)
     }
 }
 
@@ -83,7 +95,8 @@ const John = new Instructor({
     age: 37,
     previousBackground: 'college',
     className: 'wed21',
-    favSubject: ['Html', 'CSS', 'JavaScript']
+    favSubject: ['Html', 'CSS', 'JavaScript'],
+    grade: 90
   });
 
   John.grade(jane,'CSS')
@@ -94,12 +107,15 @@ const fred = new Student({
     age: 37,
     previousBackground: 'college',
     className: 'wed21',
-    favSubject: ['Html', 'CSS', 'JavaScript']
+    favSubject: ['Html', 'CSS', 'JavaScript'],
+    grade: 65
   });
 
   fred.listSubjects();
   fred.PRAssignments('React');
   fred.sprintChallenge('html');
+  fred.canGraduate()
+  jane.canGraduate()
 
   const brad = new ProjectManager({
     name: 'Brad',
@@ -114,4 +130,7 @@ const fred = new Student({
 
 brad.standUp('web21');
 brad.debugsCode(jane, 'javascript')
+brad.changeGrade(jane)
+brad.changeGrade(fred)
+console.log(fred)
 
